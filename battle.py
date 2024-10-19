@@ -23,7 +23,7 @@ class Rogue:
 
     def take_damage(self, damage):
         self.health -= damage
-        print(f"{self.name} took {damage}, remaining health: {self.health}.")
+        print(f"\n{self.name} took {damage}, remaining health: {self.health}.")
         time.sleep(1)
 
     def melee_attack(self):  # return damage if dice_hits is greater or equal than 5
@@ -32,7 +32,7 @@ class Rogue:
             dice_dmg = random.randint(1, 6)
             dice_crit = random.randint(1, 6)
             dmg = self.dex + dice_dmg + dice_crit
-            print("Critical hit, rolling 2d6 plus dexterity for damage:")
+            print("\nCritical hit, rolling 2d6 plus dexterity for damage:")
             time.sleep(1)
             print(f"{self.name} attacks and deals {dmg}!")
             time.sleep(1)
@@ -40,14 +40,14 @@ class Rogue:
         elif dice_hits >= 5 and dice_hits < 10:
             dice_dmg = random.randint(1, 6)
             dmg = self.dex + dice_dmg
-            print("Rolling 1d6 for damage plus your dexterity:")
+            print("\nRolling 1d6 for damage plus your dexterity:")
             time.sleep(1)
             print(f"{self.name} attacks and deals {dmg}!")
             time.sleep(1)
             return dmg
         else:
             time.sleep(1)
-            print(f"{self.name} tries to hit the target, but misses!")
+            print(f"\n{self.name} tries to hit the target, but misses!")
             time.sleep(1)
             return 0
 
@@ -59,7 +59,7 @@ class Rogue:
                 dice_dmg = random.randint(1, 3)
                 dice_crit = random.randint(1, 3)
                 dmg = self.int + essence + dice_dmg + dice_crit
-                print("Critical hit, rolling 2d3 plus int and essence for damage:")
+                print("\nCritical hit, rolling 2d3 plus int and essence for damage:")
                 time.sleep(1)
                 print(f"{self.name} attacks with a shining essence blade and deals {dmg}!")
                 time.sleep(1)
@@ -67,20 +67,20 @@ class Rogue:
             elif dice_hits >= 4 and dice_hits < 10:
                 dice_dmg = random.randint(1, 3)
                 dmg = self.int + essence + dice_dmg
-                print("Rolling 1d3 plus essence for damage:")
+                print("\nRolling 1d3 plus essence for damage:")
                 time.sleep(1)
                 print(f"{self.name} attacks with an essence blade and deals {dmg} damage!")
                 time.sleep(1)
                 return dmg
             else:
                 time.sleep(1)
-                print("You miss! But...")
+                print("\nYou miss! But...")
                 time.sleep(1)
                 print("You cause at least a bit of damage by luck!")
                 time.sleep(1)
                 return 1
         else:
-            print(f"{self.name} needs to spend at least some essence to deal magical damage!")
+            print(f"\n{self.name} needs to spend at least some essence to deal magical damage!")
             time.sleep(1)
             print("You cause at least a bit of damage by luck!")
             time.sleep(1)
@@ -99,7 +99,7 @@ class Monster:
 
     def take_damage(self, damage):
         self.health -= damage
-        print(f"{self.name} took {damage}, remaining health: {self.health}.")
+        print(f"\n{self.name} took {damage}, remaining health: {self.health}.")
         time.sleep(1)
 
     def attack(self):
@@ -108,7 +108,7 @@ class Monster:
             dice_dmg = random.randint(1, 6)
             dice_crit = random.randint(1, 6)
             dmg = self.str + dice_dmg + dice_crit
-            print("Critical hit, rolling 2d6 plus strength for damage:")
+            print("\nCritical hit, rolling 2d6 plus strength for damage:")
             time.sleep(1)
             print(f"{self.name} attacks and deals {dmg}!")
             time.sleep(1)
@@ -116,14 +116,14 @@ class Monster:
         elif dice_hits >= 5 and dice_hits < 10:
             dice_dmg = random.randint(1, 6)
             dmg = self.str + dice_dmg
-            print("Rolling 1d6 for damage plus your strength:")
+            print("\nRolling 1d6 for damage plus your strength:")
             time.sleep(1)
             print(f"{self.name} attacks and deals {dmg}!")
             time.sleep(1)
             return dmg
         else:
             time.sleep(1)
-            print(f"{self.name} tries to hit the target, but misses!")
+            print(f"\n{self.name} tries to hit the target, but misses!")
             time.sleep(1)
             return 0
 
@@ -133,7 +133,7 @@ class Monster:
             dice_dmg = random.randint(1, 2)
             dice_crit = random.randint(1, 2)
             dmg = dice_dmg + dice_crit
-            print("Critical hit, rolling 2d2 plus dexterity for damage:")
+            print("\nCritical hit, rolling 2d2 plus dexterity for damage:")
             time.sleep(1)
             print(f"{self.name} attacks and deals {dmg}!")
             time.sleep(1)
@@ -141,7 +141,7 @@ class Monster:
         elif dice_hits >= 7 and dice_hits < 15:
             dice_dmg = random.randint(1, 2)
             dmg = dice_dmg
-            print("Hit! Rolling 1d2 for damage:")
+            print("\nHit! Rolling 1d2 for damage:")
             time.sleep(1)
             print(f"{self.name} makes a quick attack, dealing {dmg}!")
             time.sleep(1)
@@ -151,7 +151,7 @@ class Monster:
             dmg = dice_dmg
             self.health -= dmg
             time.sleep(1)
-            print(f"Even with an easy attack, {self.name} ends up hurting itself! It takes {dmg} from its own mistake!")
+            print(f"\nEven with an easy attack, {self.name} ends up hurting itself! It takes {dmg} from its own mistake!")
             time.sleep(1)
             return 0
 
